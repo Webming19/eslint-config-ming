@@ -187,7 +187,7 @@ module.exports = {
     'import/no-absolute-path': 'off',
 
     // Common
-    'semi': ['error', 'never'],
+    'semi': ['error', 'always'],
     'curly': ['error', 'multi-or-nest', 'consistent'],
     'quotes': ['error', 'single'],
     'quote-props': ['error', 'consistent-as-needed'],
@@ -337,4 +337,4 @@ module.exports = {
     'antfu/import-dedupe': 'error',
     // 'antfu/prefer-inline-type-import': 'error',
   },
-}
+};

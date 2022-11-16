@@ -1,4 +1,4 @@
-const basic = require('@antfu/eslint-config-basic')
+const basic = require('@antfu/eslint-config-basic');
 
 module.exports = {
   extends: [
@@ -76,8 +76,8 @@ module.exports = {
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
     'object-curly-spacing': 'off',
     '@typescript-eslint/object-curly-spacing': ['error', 'always'],
-    'semi': 'off',
-    '@typescript-eslint/semi': ['error', 'never'],
+    // 'semi': 'off',
+    '@typescript-eslint/semi': ['error', 'always'],
     'quotes': 'off',
     '@typescript-eslint/quotes': ['error', 'single'],
     'space-before-blocks': 'off',
@@ -136,4 +136,4 @@ module.exports = {
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
   },
-}
+};
