@@ -1,6 +1,6 @@
-import { RuleTester } from '@typescript-eslint/utils/dist/ts-eslint'
-import { it } from 'vitest'
-import rule, { RULE_NAME } from './generic-spacing'
+import { RuleTester } from '@typescript-eslint/utils/dist/ts-eslint';
+import { it } from 'vitest';
+import rule, { RULE_NAME } from './generic-spacing';
 
 const valids = [
   'type Foo<T = true> = T',
@@ -23,7 +23,7 @@ type Foo<
 `interface Foo {
   foo?: <T>(name: T) => void
 }`,
-]
+];
 const invalids = [
   ['type Foo<T=true> = T', 'type Foo<T = true> = T'],
   ['type Foo<T,K> = T', 'type Foo<T, K> = T'],
@@ -34,12 +34,12 @@ const invalids = [
 }`, `interface Log {
   foo<T>(name: T): void
 }`],
-] as const
+] as const;
 
 it('runs', () => {
   const ruleTester: RuleTester = new RuleTester({
     parser: require.resolve('@typescript-eslint/parser'),
-  })
+  });
 
   ruleTester.run(RULE_NAME, rule, {
     valid: valids,
@@ -48,5 +48,5 @@ it('runs', () => {
       output: i[1].trim(),
       errors: Array.from({ length: i[2] || 1 }, () => ({ messageId: 'genericSpacingMismatch' })),
     })),
-  })
-})
+  });
+});
